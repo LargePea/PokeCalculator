@@ -210,17 +210,22 @@ def load_pokemon_stats():
 
 
 def load_pokemon_image(url):
-    http = urllib3.PoolManager()
-    response = http.request('GET', url)
-    pokemon = json.loads(response.data.decode('utf-8'))
-    image_url = pokemon["sprites"]["front_default"]
-    urlretrieve(image_url, "./Pokemon.png")
-    image = Image.open("./Pokemon.png")
-    image = image.resize((150, 150), Image.NEAREST)
-    photo = ImageTk.PhotoImage(image)
-    canvas1.image = photo
-    canvas1.create_image(150, 75, image=photo)
-
+    global label_list
+    try:
+        http = urllib3.PoolManager()
+        response = http.request('GET', url)
+        pokemon = json.loads(response.data.decode('utf-8'))
+        image_url = pokemon["sprites"]["front_default"]
+        urlretrieve(image_url, "./Pokemon.png")
+        image = Image.open("./Pokemon.png")
+        image = image.resize((150, 150), Image.NEAREST)
+        photo = ImageTk.PhotoImage(image)
+        canvas1.image = photo
+        canvas1.create_image(150, 75, image=photo)
+    except TypeError:
+        label = tk.Label(text='Image not Found', anchor='center', font=('Arial', 12, "bold"), bg="white")
+        label.place(x=75, y=50)
+        label_list.append(label)
 
 def delete_windows():
     button1.place_forget()
