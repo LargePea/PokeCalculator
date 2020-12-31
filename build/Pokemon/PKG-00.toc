@@ -1,0 +1,45 @@
+('D:\\Pythonshit\\build\\Pokemon\\PKG-00.pkg',
+ {'BINARY': 1,
+  'DATA': 1,
+  'EXECUTABLE': 1,
+  'EXTENSION': 1,
+  'PYMODULE': 1,
+  'PYSOURCE': 1,
+  'PYZ': 0},
+ [('PYZ-00.pyz', 'D:\\Pythonshit\\build\\Pokemon\\PYZ-00.pyz', 'PYZ'),
+  ('struct',
+   'c:\\users\\ralph '
+   'li\\appdata\\local\\programs\\python\\python39\\lib\\struct.pyo',
+   'PYMODULE'),
+  ('pyimod01_os_path',
+   'c:\\users\\ralph '
+   'li\\appdata\\local\\programs\\python\\python39\\lib\\site-packages\\PyInstaller\\loader\\pyimod01_os_path.pyc',
+   'PYMODULE'),
+  ('pyimod02_archive',
+   'c:\\users\\ralph '
+   'li\\appdata\\local\\programs\\python\\python39\\lib\\site-packages\\PyInstaller\\loader\\pyimod02_archive.pyc',
+   'PYMODULE'),
+  ('pyimod03_importers',
+   'c:\\users\\ralph '
+   'li\\appdata\\local\\programs\\python\\python39\\lib\\site-packages\\PyInstaller\\loader\\pyimod03_importers.pyc',
+   'PYMODULE'),
+  ('pyiboot01_bootstrap',
+   'c:\\users\\ralph '
+   'li\\appdata\\local\\programs\\python\\python39\\lib\\site-packages\\PyInstaller\\loader\\pyiboot01_bootstrap.py',
+   'PYSOURCE'),
+  ('pyi_rth_multiprocessing',
+   'C:\\Users\\Ralph '
+   'Li\\AppData\\Local\\Programs\\Python\\Python39\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_multiprocessing.py',
+   'PYSOURCE'),
+  ('pyi_rth__tkinter',
+   'C:\\Users\\Ralph '
+   'Li\\AppData\\Local\\Programs\\Python\\Python39\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth__tkinter.py',
+   'PYSOURCE'),
+  ('Pokemon', 'D:\\Pythonshit\\Pokemon.py', 'PYSOURCE'),
+  ('Pokemon.exe.manifest',
+   'D:\\Pythonshit\\build\\Pokemon\\Pokemon.exe.manifest',
+   'BINARY')],
+ True,
+ False,
+ False,
+ [])
