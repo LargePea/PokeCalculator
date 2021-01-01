@@ -141,11 +141,23 @@ attack_types = {'normal': 1.0, 'fire': 1.0, 'water': 1.0, 'grass': 1.0, 'electri
                 'ground': 1.0, 'flying': 1.0, 'psychic': 1.0, 'bug': 1.0, 'rock': 1.0, 'ghost': 1.0, 'dragon': 1.0, 'dark': 1.0,
                 'steel': 1.0, 'fairy': 1.0}
 
-colors = ('wheat3', 'dark orange', 'SteelBlue1', 'chartreuse3', 'gold', 'CadetBlue1', 'firebrick4', 'DarkOrchid4',
-          'LightGoldenrod2', 'MediumPurple2', 'VioletRed2', 'DarkOliveGreen3', 'DarkGoldenrod3', 'purple4', 'blue violet',
-          'DarkOrange4', 'plum1', 'HotPink1')
+colors = {'normal': 'wheat3', 'fire': 'dark orange', 'water': 'SteelBlue1', 'grass': 'chartreuse3', 'electric': 'gold',
+         'ice': 'CadetBlue1', 'fighting': 'firebrick4', 'poison': 'DarkOrchid4', 'ground': 'LightGoldenrod2',
+          'flying': 'MediumPurple2', 'psychic': 'VioletRed2', 'bug': 'DarkOliveGreen3', 'rock': 'DarkGoldenrod3',
+          'ghost': 'purple4', 'dragon': 'blue violet', 'dark': 'DarkOrange4', 'steel': 'plum1', 'fairy': 'HotPink1'}
 
 label_list = []
+
+
+def load_pokemon_types(types):
+    global label_list
+    y = 50
+    for defend_type in types:
+        text = defend_type["type"]["name"].capitalize()
+        label = tk.Label(text=text, font=('Arial', 10, "bold"), bg=colors[defend_type["type"]["name"]], fg='White', width=7)
+        label.place(x=225, y=y)
+        label_list.append(label)
+        y += 22
 
 
 def reset():
@@ -180,8 +192,8 @@ def load_pokemon_stats():
     y = 150
     image_list = []
     global label_list
-    for color, types in enumerate(attack_types):
-        labels = tk.Label(bg=colors[color], fg='White', text=f'{attack_types[types]}x', width=7, font=('Arial', 12, "bold"))
+    for types in attack_types:
+        labels = tk.Label(bg=colors[types], fg='White', text=f'{attack_types[types]}x', width=7, font=('Arial', 12, "bold"))
         labels.place(x=x, y=y)
         label_list.append(labels)
         if y < 425:
@@ -232,7 +244,6 @@ def delete_windows():
 def check_pokemon_reactions(url):
     global combos
     global attack_types
-    test = 0
     defend_types = get_pokemon_type(url)
     if not defend_types:
         return
@@ -244,6 +255,7 @@ def check_pokemon_reactions(url):
                 attack_types[attack_type] *= combos[combo]
     load_pokemon_image(url)
     load_pokemon_name(url)
+    load_pokemon_types(defend_types)
     search_again.place(x=75, y=470, width=150)
     load_pokemon_stats()
 
